@@ -1,7 +1,15 @@
-@(message: String)
+@(title: String)
 
-@main("Welcome to Play") {
+@main(title) {
 
-    @play20.welcome(message, style = "Java")
+<!--TODO better input types and some labels -->
+
+    <form action="@routes.Application.addEnvironmentData()" method="post">
+        <label for="temperature">Temperature</label>
+        <input id="temperature" type="text" name="temperature" />
+        <label for="date">Date</label>
+        <input id="date" type="text" name="date" />
+        <button>Add Environment Data</button>
+    </form>
 
 }

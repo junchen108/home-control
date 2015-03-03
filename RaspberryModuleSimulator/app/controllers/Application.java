@@ -1,23 +1,23 @@
 package controllers;
 
 import java.util.List;
+import java.util.Timer;
 
 import models.Environment;
 import play.data.Form;
 import play.db.ebean.Model;
 import play.libs.Json;
-import play.mvc.Controller;
-import play.mvc.Result;
+import play.mvc.*;
 import views.html.*;
 
 public class Application extends Controller {
 
     public static Result index() {
-        return ok(index.render("Evironment Data"));
+        return ok(index.render("Welcome!"));
     }
-
+    
     public static Result addEnvironmentData() {
-        Environment environment = Form.form(Environment.class).bindFromRequest().get();
+        Environment environment = Environment.generateEnvironmentData();
         environment.save();
         return redirect(routes.Application.index());
     }

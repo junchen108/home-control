@@ -1,15 +1,7 @@
-@(title: String)
+@(message: String)
 
-@main(title) {
+@main(message) {
 
-<!--TODO better input types and some labels -->
-
-    <form action="@routes.Application.addEnvironmentData()" method="post">
-        <label for="temperature">Temperature</label>
-        <input id="temperature" type="text" name="temperature" />
-        <label for="date">Date</label>
-        <input id="date" type="text" name="date" />
-        <button>Add Environment Data</button>
-    </form>
+    <h1> Welcome! </h1>
 
 }

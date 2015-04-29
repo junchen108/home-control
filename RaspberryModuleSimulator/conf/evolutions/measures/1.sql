@@ -6,8 +6,7 @@
 create table measure (
   id                        bigint not null,
   value                     double,
-  unit                      varchar(255),
-  measured_date             timestamp,
+  date                      timestamp,
   constraint pk_measure primary key (id))
 ;
 

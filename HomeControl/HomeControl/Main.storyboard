@@ -1,62 +1,111 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="O8u-W3-xhO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="chK-wH-pAp">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--MainViewController-->
-        <scene sceneID="SEW-0v-shM">
+        <!--Latest Value Controller-->
+        <scene sceneID="uw8-tI-ccw">
             <objects>
-                <viewController title="Main View" id="O8u-W3-xhO" userLabel="MainViewController" customClass="MainViewController" customModule="HomeControl" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kMi-8O-YIQ" userLabel="Latest Value Controller" customClass="LatestValueViewController" customModule="HomeControl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qRW-Rg-QrR"/>
-                        <viewControllerLayoutGuide type="bottom" id="Zo0-tw-gmy"/>
+                        <viewControllerLayoutGuide type="top" id="9xG-jj-TMo"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xbj-gG-cpa"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sPu-NX-G72">
+                    <view key="view" contentMode="scaleToFill" id="CHk-UE-WQc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zu-1m-FrD">
-                                <rect key="frame" x="0.0" y="551" width="600" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <tabBarItem systemItem="favorites" id="7VV-ZY-3Ml"/>
-                                    <tabBarItem systemItem="more" id="NFt-SG-Uei"/>
-                                </items>
-                            </tabBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iws-R1-TL0" userLabel="LastValueButton" customClass="LastValueButton" customModule="HomeControl" customModuleProvider="target">
-                                <rect key="frame" x="150" y="60" width="300" height="300"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOw-sf-HhC" userLabel="Latest Value Button" customClass="LatestValueButton" customModule="HomeControl" customModuleProvider="target">
+                                <rect key="frame" x="142" y="40" width="300" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Iws-R1-TL0" secondAttribute="height" multiplier="1:1" id="pj2-ih-iNK"/>
+                                    <constraint firstAttribute="width" secondItem="oOw-sf-HhC" secondAttribute="height" multiplier="1:1" id="ITh-xY-gvK"/>
                                 </constraints>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="FetchLatestMeasureAndShowAsTitle" destination="O8u-W3-xhO" eventType="touchUpInside" id="KuX-iD-AgO"/>
+                                    <action selector="FetchLatestMeasureAndShowAsTitle" destination="kMi-8O-YIQ" eventType="touchUpInside" id="1J0-nn-acd"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Iws-R1-TL0" firstAttribute="width" secondItem="sPu-NX-G72" secondAttribute="width" multiplier="0.5" id="8VQ-dX-rvM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0zu-1m-FrD" secondAttribute="trailing" constant="-16" id="Sfb-2N-wRq"/>
-                            <constraint firstAttribute="centerX" secondItem="Iws-R1-TL0" secondAttribute="centerX" id="a5A-Ov-aSK"/>
-                            <constraint firstItem="Iws-R1-TL0" firstAttribute="top" secondItem="qRW-Rg-QrR" secondAttribute="bottom" multiplier="3" id="fGu-d4-Vpc"/>
-                            <constraint firstItem="0zu-1m-FrD" firstAttribute="leading" secondItem="sPu-NX-G72" secondAttribute="leadingMargin" constant="-16" id="m9b-Cb-XPW"/>
-                            <constraint firstItem="Zo0-tw-gmy" firstAttribute="top" secondItem="0zu-1m-FrD" secondAttribute="bottom" id="tc5-vc-sxT"/>
+                            <constraint firstAttribute="centerX" secondItem="oOw-sf-HhC" secondAttribute="centerX" constant="8" id="Ehg-oH-DVU"/>
+                            <constraint firstItem="oOw-sf-HhC" firstAttribute="width" secondItem="CHk-UE-WQc" secondAttribute="width" multiplier="0.5" id="Hdq-aM-ayV"/>
+                            <constraint firstItem="oOw-sf-HhC" firstAttribute="top" secondItem="9xG-jj-TMo" secondAttribute="bottom" multiplier="2" id="QUf-TO-WBq"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="615-Ej-d6B"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="lastValueButton" destination="Iws-R1-TL0" id="f45-nN-YVL"/>
+                        <outlet property="latestValueButton" destination="oOw-sf-HhC" id="Wa4-WG-IS0"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GHh-1E-sSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kSi-bF-8uU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2025" y="1539"/>
+            <point key="canvasLocation" x="2102" y="295"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="roU-Ve-Zeo">
+            <objects>
+                <viewController id="Ijp-zQ-Tm8" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cuy-bM-1IL"/>
+                        <viewControllerLayoutGuide type="bottom" id="94y-cd-I3Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IXS-2y-CEX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="UNe-eM-1Rg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="44g-bV-Ouv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2114" y="1240"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="B4D-Sk-qfP">
+            <objects>
+                <viewController id="SoA-26-NmV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bZc-0b-dZu"/>
+                        <viewControllerLayoutGuide type="bottom" id="xHy-Bg-hU7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S2a-e9-dJ8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="gX1-gV-r64"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gim-kH-o5I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2188" y="2339"/>
+        </scene>
+        <!--Main Controller-->
+        <scene sceneID="6kp-PH-2Bo">
+            <objects>
+                <tabBarController storyboardIdentifier="MainViewController" id="chK-wH-pAp" userLabel="Main Controller" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="fZ8-BY-tF8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="kMi-8O-YIQ" kind="relationship" relationship="viewControllers" id="X7g-2V-dTc"/>
+                        <segue destination="Ijp-zQ-Tm8" kind="relationship" relationship="viewControllers" id="6rW-92-rTJ"/>
+                        <segue destination="SoA-26-NmV" kind="relationship" relationship="viewControllers" id="qyz-br-kxd"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vsc-Iy-YAz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1054" y="1240"/>
         </scene>
     </scenes>
 </document>

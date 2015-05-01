@@ -1,19 +1,19 @@
 //
-//  MainViewController.swift
+//  LatestValueViewController.swift
 //  HomeControl
 //
-//  Created by Jun Chen on 30/04/15.
+//  Created by Jun Chen on 01/05/15.
 //  Copyright (c) 2015 EPFL. All rights reserved.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
-    
-    @IBOutlet weak var lastValueButton: LastValueButton!
+class LatestValueViewController: UIViewController {
+
+    @IBOutlet weak var latestValueButton: LatestValueButton!
     
     let networkClient = MockNetworkClient()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,14 +32,13 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
     
@@ -51,17 +50,17 @@ class MainViewController: UIViewController {
                 displayDataFormatError("Can't diplay the fetched data, sorry.")
             } else {
                 dispatch_async(dispatch_get_main_queue(), {
-                    self.lastValueButton.setTitle(String(format:"%.2f", measures.first!.value), forState: UIControlState.Normal)
+                    self.latestValueButton.setTitle(String(format:"%.2f", measures.first!.value), forState: UIControlState.Normal)
                     // TODO: Date
                     // If same date, diplay no new value
                 })
-
+                
             }
         }
         
         networkClient.httpGet(fromPath: "/last", completionAction: displayNewValueAsTitle, errorAction: displayNetworkError)
     }
-    
+
     func displayNetworkError(errorMessage: String) {
         JLToast.makeText(errorMessage, duration: JLToastDelay.ShortDelay).show()
     }

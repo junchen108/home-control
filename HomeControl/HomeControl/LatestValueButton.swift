@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LastValueButton: UIButton {
+class LatestValueButton: UIButton {
     
     @IBInspectable var fillColor: UIColor = UIColor.greenColor()
     

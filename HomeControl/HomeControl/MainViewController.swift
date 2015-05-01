@@ -9,11 +9,22 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    @IBOutlet weak var lastValueButton: LastValueButton!
+    
+    let networkClient = MockNetworkClient()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let screenRect = UIScreen.mainScreen().bounds
+        let verticalOffSet = screenRect.height * 0.1
+        JLToastView.setDefaultValue(
+            verticalOffSet as NSNumber ,
+            forAttributeName: JLToastViewPortraitOffsetYAttributeName,
+            userInterfaceIdiom: .Phone
+        )
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,5 +42,32 @@ class MainViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func FetchLatestMeasureAndShowAsTitle() {
+        func displayNewValueAsTitle(data: NSData) -> Void {
+            let result: AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: nil)!
+            let measures = Measure.convertJsonToMeasure(result, dateFormat: MockNetworkClient.DATE_FORMAT)
+            if measures.count != 1 {
+                displayDataFormatError("Can't diplay the fetched data, sorry.")
+            } else {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.lastValueButton.setTitle(String(format:"%.2f", measures.first!.value), forState: UIControlState.Normal)
+                    // TODO: Date
+                    // If same date, diplay no new value
+                })
 
+            }
+        }
+        
+        networkClient.httpGet(fromPath: "/last", completionAction: displayNewValueAsTitle, errorAction: displayNetworkError)
+    }
+    
+    func displayNetworkError(errorMessage: String) {
+        JLToast.makeText(errorMessage, duration: JLToastDelay.ShortDelay).show()
+    }
+    
+    func displayDataFormatError(errorMessage: String) {
+        JLToast.makeText(errorMessage, duration: JLToastDelay.ShortDelay).show()
+    }
+    
 }

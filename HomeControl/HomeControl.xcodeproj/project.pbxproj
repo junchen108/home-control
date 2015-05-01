@@ -14,6 +14,13 @@
 		856EAC281AF283A100E9ABCD /* LastValueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856EAC271AF283A100E9ABCD /* LastValueButton.swift */; };
 		856EAC301AF29D2900E9ABCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 856EAC2F1AF29D2900E9ABCD /* Main.storyboard */; };
 		856EAC3C1AF29EF000E9ABCD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856EAC3B1AF29EF000E9ABCD /* MainViewController.swift */; };
+		85F0501C1AF2DEE700BB595E /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0501B1AF2DEE700BB595E /* NetworkClient.swift */; };
+		85F0501E1AF2E1EF00BB595E /* MockNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0501D1AF2E1EF00BB595E /* MockNetworkClient.swift */; };
+		85F050211AF2E85E00BB595E /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F050201AF2E85E00BB595E /* NetworkUtils.swift */; };
+		85F050231AF2F14F00BB595E /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F050221AF2F14F00BB595E /* Measure.swift */; };
+		85F050311AF30AD100BB595E /* JLToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0502E1AF30AD100BB595E /* JLToast.swift */; };
+		85F050321AF30AD100BB595E /* JLToastCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0502F1AF30AD100BB595E /* JLToastCenter.swift */; };
+		85F050331AF30AD100BB595E /* JLToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F050301AF30AD100BB595E /* JLToastView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +42,17 @@
 		852F9DEF1A9A2D4F0033AA11 /* HomeControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		852F9DF41A9A2D4F0033AA11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		852F9DF51A9A2D4F0033AA11 /* HomeControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeControlTests.swift; sourceTree = "<group>"; };
-		853173E01A9A784E00A4283A /* HTTPJSONParser.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HTTPJSONParser.playground; sourceTree = "<group>"; };
 		856EAC271AF283A100E9ABCD /* LastValueButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastValueButton.swift; sourceTree = "<group>"; };
 		856EAC2F1AF29D2900E9ABCD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		856EAC3B1AF29EF000E9ABCD /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		85F0501B1AF2DEE700BB595E /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		85F0501D1AF2E1EF00BB595E /* MockNetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkClient.swift; sourceTree = "<group>"; };
+		85F050201AF2E85E00BB595E /* NetworkUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
+		85F050221AF2F14F00BB595E /* Measure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
+		85F0502D1AF30AD100BB595E /* JLToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLToast.h; sourceTree = "<group>"; };
+		85F0502E1AF30AD100BB595E /* JLToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLToast.swift; sourceTree = "<group>"; };
+		85F0502F1AF30AD100BB595E /* JLToastCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLToastCenter.swift; sourceTree = "<group>"; };
+		85F050301AF30AD100BB595E /* JLToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLToastView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +94,7 @@
 		852F9DDC1A9A2D4F0033AA11 /* HomeControl */ = {
 			isa = PBXGroup;
 			children = (
-				853173DE1A9A6AD900A4283A /* Playgrounds */,
+				85F0502C1AF30AD100BB595E /* JLToast */,
 				8537B2391A9A887500020DB6 /* Network */,
 				853173D91A9A47F800A4283A /* Controllers */,
 				853173D81A9A47F100A4283A /* Models */,
@@ -130,6 +144,7 @@
 		853173D81A9A47F100A4283A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				85F050221AF2F14F00BB595E /* Measure.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -142,19 +157,25 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		853173DE1A9A6AD900A4283A /* Playgrounds */ = {
-			isa = PBXGroup;
-			children = (
-				853173E01A9A784E00A4283A /* HTTPJSONParser.playground */,
-			);
-			name = Playgrounds;
-			sourceTree = "<group>";
-		};
 		8537B2391A9A887500020DB6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				85F050201AF2E85E00BB595E /* NetworkUtils.swift */,
+				85F0501B1AF2DEE700BB595E /* NetworkClient.swift */,
+				85F0501D1AF2E1EF00BB595E /* MockNetworkClient.swift */,
 			);
 			name = Network;
+			sourceTree = "<group>";
+		};
+		85F0502C1AF30AD100BB595E /* JLToast */ = {
+			isa = PBXGroup;
+			children = (
+				85F0502D1AF30AD100BB595E /* JLToast.h */,
+				85F0502E1AF30AD100BB595E /* JLToast.swift */,
+				85F0502F1AF30AD100BB595E /* JLToastCenter.swift */,
+				85F050301AF30AD100BB595E /* JLToastView.swift */,
+			);
+			path = JLToast;
 			sourceTree = "<group>";
 		};
 		CA7A8C461AF2755F001095CB /* Widgets */ = {
@@ -265,9 +286,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85F050231AF2F14F00BB595E /* Measure.swift in Sources */,
+				85F050311AF30AD100BB595E /* JLToast.swift in Sources */,
 				856EAC3C1AF29EF000E9ABCD /* MainViewController.swift in Sources */,
+				85F0501E1AF2E1EF00BB595E /* MockNetworkClient.swift in Sources */,
+				85F050331AF30AD100BB595E /* JLToastView.swift in Sources */,
 				852F9DE01A9A2D4F0033AA11 /* AppDelegate.swift in Sources */,
 				856EAC281AF283A100E9ABCD /* LastValueButton.swift in Sources */,
+				85F050211AF2E85E00BB595E /* NetworkUtils.swift in Sources */,
+				85F0501C1AF2DEE700BB595E /* NetworkClient.swift in Sources */,
+				85F050321AF30AD100BB595E /* JLToastCenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

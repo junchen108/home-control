@@ -7,10 +7,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Main View-->
+        <!--MainViewController-->
         <scene sceneID="SEW-0v-shM">
             <objects>
-                <viewController title="Main View" id="O8u-W3-xhO" customClass="MainViewController" customModule="HomeControl" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Main View" id="O8u-W3-xhO" userLabel="MainViewController" customClass="MainViewController" customModule="HomeControl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qRW-Rg-QrR"/>
                         <viewControllerLayoutGuide type="bottom" id="Zo0-tw-gmy"/>
@@ -35,6 +35,9 @@
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="FetchLatestMeasureAndShowAsTitle" destination="O8u-W3-xhO" eventType="touchUpInside" id="KuX-iD-AgO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,6 +50,9 @@
                             <constraint firstItem="Zo0-tw-gmy" firstAttribute="top" secondItem="0zu-1m-FrD" secondAttribute="bottom" id="tc5-vc-sxT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lastValueButton" destination="Iws-R1-TL0" id="f45-nN-YVL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHh-1E-sSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

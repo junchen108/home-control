@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 class LastValueButton: UIButton {
     
     @IBInspectable var fillColor: UIColor = UIColor.greenColor()

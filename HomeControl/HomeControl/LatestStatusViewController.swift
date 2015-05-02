@@ -8,9 +8,9 @@
 
 import UIKit
 
-class LatestValueViewController: UIViewController {
+class LatestStatusViewController: UIViewController {
 
-    @IBOutlet weak var latestValueButton: LatestValueButton!
+    @IBOutlet weak var latestStatusButton: LatestStatusButton!
     
     let networkClient = MockNetworkClient()
     
@@ -50,7 +50,7 @@ class LatestValueViewController: UIViewController {
                 displayDataFormatError("Can't diplay the fetched data, sorry.")
             } else {
                 dispatch_async(dispatch_get_main_queue(), {
-                    self.latestValueButton.setTitle(String(format:"%.2f", measures.first!.value), forState: UIControlState.Normal)
+                    self.latestStatusButton.setTitle(String(format:"%.2f", measures.first!.value), forState: UIControlState.Normal)
                     // TODO: Date
                     // If same date, diplay no new value
                 })

@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		851A08311AF5239E0081DC0E /* AdjustButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851A08301AF5239E0081DC0E /* AdjustButton.swift */; };
 		852F9DE01A9A2D4F0033AA11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852F9DDF1A9A2D4F0033AA11 /* AppDelegate.swift */; };
 		852F9DE71A9A2D4F0033AA11 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 852F9DE61A9A2D4F0033AA11 /* Images.xcassets */; };
 		852F9DEA1A9A2D4F0033AA11 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 852F9DE81A9A2D4F0033AA11 /* LaunchScreen.xib */; };
 		852F9DF61A9A2D4F0033AA11 /* HomeControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852F9DF51A9A2D4F0033AA11 /* HomeControlTests.swift */; };
 		856DD8281AF3B04700604CD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 856DD8271AF3B04700604CD2 /* Main.storyboard */; };
-		856EAC281AF283A100E9ABCD /* LatestValueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856EAC271AF283A100E9ABCD /* LatestValueButton.swift */; };
-		85E0B8211AF3BEAC00BECE2D /* LatestValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E0B8201AF3BEAC00BECE2D /* LatestValueViewController.swift */; };
+		856EAC281AF283A100E9ABCD /* LatestStatusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856EAC271AF283A100E9ABCD /* LatestStatusButton.swift */; };
+		85E0B8211AF3BEAC00BECE2D /* LatestStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E0B8201AF3BEAC00BECE2D /* LatestStatusViewController.swift */; };
 		85F0501C1AF2DEE700BB595E /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0501B1AF2DEE700BB595E /* NetworkClient.swift */; };
 		85F0501E1AF2E1EF00BB595E /* MockNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0501D1AF2E1EF00BB595E /* MockNetworkClient.swift */; };
 		85F050211AF2E85E00BB595E /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F050201AF2E85E00BB595E /* NetworkUtils.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		851A08301AF5239E0081DC0E /* AdjustButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjustButton.swift; sourceTree = "<group>"; };
 		852F9DDA1A9A2D4F0033AA11 /* HomeControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		852F9DDE1A9A2D4F0033AA11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		852F9DDF1A9A2D4F0033AA11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,8 +45,8 @@
 		852F9DF41A9A2D4F0033AA11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		852F9DF51A9A2D4F0033AA11 /* HomeControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeControlTests.swift; sourceTree = "<group>"; };
 		856DD8271AF3B04700604CD2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		856EAC271AF283A100E9ABCD /* LatestValueButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestValueButton.swift; sourceTree = "<group>"; };
-		85E0B8201AF3BEAC00BECE2D /* LatestValueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestValueViewController.swift; sourceTree = "<group>"; };
+		856EAC271AF283A100E9ABCD /* LatestStatusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestStatusButton.swift; sourceTree = "<group>"; };
+		85E0B8201AF3BEAC00BECE2D /* LatestStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestStatusViewController.swift; sourceTree = "<group>"; };
 		85F0501B1AF2DEE700BB595E /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		85F0501D1AF2E1EF00BB595E /* MockNetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkClient.swift; sourceTree = "<group>"; };
 		85F050201AF2E85E00BB595E /* NetworkUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
@@ -152,7 +154,7 @@
 		853173D91A9A47F800A4283A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				85E0B8201AF3BEAC00BECE2D /* LatestValueViewController.swift */,
+				85E0B8201AF3BEAC00BECE2D /* LatestStatusViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -181,7 +183,8 @@
 		CA7A8C461AF2755F001095CB /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
-				856EAC271AF283A100E9ABCD /* LatestValueButton.swift */,
+				856EAC271AF283A100E9ABCD /* LatestStatusButton.swift */,
+				851A08301AF5239E0081DC0E /* AdjustButton.swift */,
 			);
 			name = Widgets;
 			sourceTree = "<group>";
@@ -287,12 +290,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				85F050231AF2F14F00BB595E /* Measure.swift in Sources */,
-				85E0B8211AF3BEAC00BECE2D /* LatestValueViewController.swift in Sources */,
+				85E0B8211AF3BEAC00BECE2D /* LatestStatusViewController.swift in Sources */,
+				851A08311AF5239E0081DC0E /* AdjustButton.swift in Sources */,
 				85F050311AF30AD100BB595E /* JLToast.swift in Sources */,
 				85F0501E1AF2E1EF00BB595E /* MockNetworkClient.swift in Sources */,
 				85F050331AF30AD100BB595E /* JLToastView.swift in Sources */,
 				852F9DE01A9A2D4F0033AA11 /* AppDelegate.swift in Sources */,
-				856EAC281AF283A100E9ABCD /* LatestValueButton.swift in Sources */,
+				856EAC281AF283A100E9ABCD /* LatestStatusButton.swift in Sources */,
 				85F050211AF2E85E00BB595E /* NetworkUtils.swift in Sources */,
 				85F0501C1AF2DEE700BB595E /* NetworkClient.swift in Sources */,
 				85F050321AF30AD100BB595E /* JLToastCenter.swift in Sources */,

@@ -6,19 +6,19 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Latest Value Controller-->
+        <!--Latest Status Controller-->
         <scene sceneID="uw8-tI-ccw">
             <objects>
-                <viewController id="kMi-8O-YIQ" userLabel="Latest Value Controller" customClass="LatestValueViewController" customModule="HomeControl" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kMi-8O-YIQ" userLabel="Latest Status Controller" customClass="LatestStatusViewController" customModule="HomeControl" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9xG-jj-TMo"/>
                         <viewControllerLayoutGuide type="bottom" id="Xbj-gG-cpa"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="CHk-UE-WQc">
+                    <view key="view" contentMode="scaleToFill" id="CHk-UE-WQc" userLabel="Latest Status View">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOw-sf-HhC" userLabel="Latest Value Button" customClass="LatestValueButton" customModule="HomeControl" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOw-sf-HhC" userLabel="Latest Status Button" customClass="LatestStatusButton" customModule="HomeControl" customModuleProvider="target">
                                 <rect key="frame" x="142" y="40" width="300" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oOw-sf-HhC" secondAttribute="height" multiplier="1:1" id="ITh-xY-gvK"/>
@@ -27,26 +27,61 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="FetchLatestMeasureAndShowAsTitle" destination="kMi-8O-YIQ" eventType="touchUpInside" id="1J0-nn-acd"/>
+                                    <action selector="FetchLatestMeasureAndShowAsTitle" destination="kMi-8O-YIQ" eventType="touchUpInside" id="eOJ-Uz-x7Z"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vG7-Jp-2na">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Latest Status" id="zfC-pk-STe"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="oOw-sf-HhC" secondAttribute="centerX" constant="8" id="Ehg-oH-DVU"/>
+                            <constraint firstItem="oOw-sf-HhC" firstAttribute="top" secondItem="vG7-Jp-2na" secondAttribute="bottom" multiplier="2" constant="71" id="CNd-jy-xVA">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="oOw-sf-HhC" secondAttribute="centerX" constant="8" id="Ehg-oH-DVU">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="oOw-sf-HhC" firstAttribute="width" secondItem="CHk-UE-WQc" secondAttribute="width" multiplier="0.5" id="Hdq-aM-ayV"/>
-                            <constraint firstItem="oOw-sf-HhC" firstAttribute="top" secondItem="9xG-jj-TMo" secondAttribute="bottom" multiplier="2" id="QUf-TO-WBq"/>
+                            <constraint firstAttribute="trailing" secondItem="vG7-Jp-2na" secondAttribute="trailing" id="LjJ-ca-XMD"/>
+                            <constraint firstItem="vG7-Jp-2na" firstAttribute="leading" secondItem="CHk-UE-WQc" secondAttribute="leading" id="O1d-yt-eJb"/>
+                            <constraint firstItem="vG7-Jp-2na" firstAttribute="top" secondItem="CHk-UE-WQc" secondAttribute="top" id="hEI-xx-tzS"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="vG7-Jp-2na"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="LjJ-ca-XMD"/>
+                                <exclude reference="O1d-yt-eJb"/>
+                                <exclude reference="hEI-xx-tzS"/>
+                                <exclude reference="CNd-jy-xVA"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="vG7-Jp-2na"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="LjJ-ca-XMD"/>
+                                <include reference="O1d-yt-eJb"/>
+                                <include reference="hEI-xx-tzS"/>
+                                <include reference="CNd-jy-xVA"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="615-Ej-d6B"/>
+                    <tabBarItem key="tabBarItem" title="Status" id="615-Ej-d6B"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="latestValueButton" destination="oOw-sf-HhC" id="Wa4-WG-IS0"/>
+                        <outlet property="latestStatusButton" destination="oOw-sf-HhC" id="fhv-9E-YQ7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kSi-bF-8uU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2102" y="295"/>
+            <point key="canvasLocation" x="2097" y="313.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="roU-Ve-Zeo">
@@ -87,10 +122,10 @@
             </objects>
             <point key="canvasLocation" x="2188" y="2339"/>
         </scene>
-        <!--Main Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="6kp-PH-2Bo">
             <objects>
-                <tabBarController storyboardIdentifier="MainViewController" id="chK-wH-pAp" userLabel="Main Controller" sceneMemberID="viewController">
+                <tabBarController id="chK-wH-pAp" userLabel="Main Tab Bar Controller" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="fZ8-BY-tF8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>

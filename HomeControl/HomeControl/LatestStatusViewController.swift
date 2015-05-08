@@ -11,6 +11,7 @@ import UIKit
 class LatestStatusViewController: UIViewController {
 
     @IBOutlet weak var latestStatusButton: LatestStatusButton!
+    @IBOutlet weak var latestDateLabel: UILabel!
     
     let networkClient = MockNetworkClient()
     
@@ -51,8 +52,8 @@ class LatestStatusViewController: UIViewController {
             } else {
                 dispatch_async(dispatch_get_main_queue(), {
                     self.latestStatusButton.setTitle(String(format:"%.2f", measures.first!.value), forState: UIControlState.Normal)
-                    // TODO: Date
-                    // If same date, diplay no new value
+                    self.latestDateLabel.text = measures.first!.getDateString()
+                    // TODO: If same date, diplay no new value
                 })
                 
             }

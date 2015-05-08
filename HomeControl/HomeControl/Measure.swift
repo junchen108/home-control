@@ -10,16 +10,27 @@ import Foundation
 
 class Measure {
     
-    let dateFormatter = NSDateFormatter()
-    
     let value: Double
     let date: NSDate?
     
     init(value: Double, dateString: String, dateFormat: String) {
+        let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = dateFormat
         
         self.value = value
         self.date = dateFormatter.dateFromString(dateString)
+    }
+    
+    func getDateString() -> String? {
+        if let date = self.date {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+            dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
+            
+            return dateFormatter.stringFromDate(date)
+        } else {
+            return "No date";
+        }
     }
     
     static func convertJsonToMeasure(json: AnyObject, dateFormat: String) -> [Measure] {

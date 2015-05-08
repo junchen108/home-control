@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -18,12 +19,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOw-sf-HhC" userLabel="Latest Status Button" customClass="LatestStatusButton" customModule="HomeControl" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOw-sf-HhC" userLabel="Latest Status Button" customClass="LatestStatusButton" customModule="HomeControl" customModuleProvider="target">
                                 <rect key="frame" x="142" y="40" width="300" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oOw-sf-HhC" secondAttribute="height" multiplier="1:1" id="ITh-xY-gvK"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <state key="normal">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -36,10 +39,17 @@
                                     <navigationItem title="Latest Status" id="zfC-pk-STe"/>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the button to fetch the latest status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YYr-M4-cDE">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="oOw-sf-HhC" firstAttribute="top" secondItem="vG7-Jp-2na" secondAttribute="bottom" multiplier="2" constant="71" id="CNd-jy-xVA">
+                            <constraint firstItem="YYr-M4-cDE" firstAttribute="trailing" secondItem="CHk-UE-WQc" secondAttribute="trailingMargin" id="0Xj-H2-dRg"/>
+                            <constraint firstItem="oOw-sf-HhC" firstAttribute="top" secondItem="vG7-Jp-2na" secondAttribute="bottom" multiplier="1.5" constant="71" id="CNd-jy-xVA">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="oOw-sf-HhC" secondAttribute="centerX" constant="8" id="Ehg-oH-DVU">
@@ -48,40 +58,55 @@
                             <constraint firstItem="oOw-sf-HhC" firstAttribute="width" secondItem="CHk-UE-WQc" secondAttribute="width" multiplier="0.5" id="Hdq-aM-ayV"/>
                             <constraint firstAttribute="trailing" secondItem="vG7-Jp-2na" secondAttribute="trailing" id="LjJ-ca-XMD"/>
                             <constraint firstItem="vG7-Jp-2na" firstAttribute="leading" secondItem="CHk-UE-WQc" secondAttribute="leading" id="O1d-yt-eJb"/>
-                            <constraint firstItem="vG7-Jp-2na" firstAttribute="top" secondItem="CHk-UE-WQc" secondAttribute="top" id="hEI-xx-tzS"/>
+                            <constraint firstItem="YYr-M4-cDE" firstAttribute="leading" secondItem="CHk-UE-WQc" secondAttribute="leadingMargin" id="ago-dd-9Ft"/>
+                            <constraint firstItem="YYr-M4-cDE" firstAttribute="top" secondItem="oOw-sf-HhC" secondAttribute="bottom" multiplier="1.1" constant="32" id="ggQ-1d-SKh">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="vG7-Jp-2na" firstAttribute="top" secondItem="CHk-UE-WQc" secondAttribute="top" id="hEI-xx-tzS">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="vG7-Jp-2na"/>
+                                <exclude reference="YYr-M4-cDE"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="LjJ-ca-XMD"/>
                                 <exclude reference="O1d-yt-eJb"/>
                                 <exclude reference="hEI-xx-tzS"/>
                                 <exclude reference="CNd-jy-xVA"/>
+                                <exclude reference="0Xj-H2-dRg"/>
+                                <exclude reference="ago-dd-9Ft"/>
+                                <exclude reference="ggQ-1d-SKh"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="vG7-Jp-2na"/>
+                                <include reference="YYr-M4-cDE"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="LjJ-ca-XMD"/>
                                 <include reference="O1d-yt-eJb"/>
                                 <include reference="hEI-xx-tzS"/>
                                 <include reference="CNd-jy-xVA"/>
+                                <include reference="0Xj-H2-dRg"/>
+                                <include reference="ago-dd-9Ft"/>
+                                <include reference="ggQ-1d-SKh"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Status" id="615-Ej-d6B"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="latestDateLabel" destination="YYr-M4-cDE" id="66o-nO-zv5"/>
                         <outlet property="latestStatusButton" destination="oOw-sf-HhC" id="fhv-9E-YQ7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kSi-bF-8uU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2097" y="313.5"/>
+            <point key="canvasLocation" x="2086.5" y="295.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="roU-Ve-Zeo">

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="chK-wH-pAp">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -15,7 +16,7 @@
                         <viewControllerLayoutGuide type="top" id="9xG-jj-TMo"/>
                         <viewControllerLayoutGuide type="bottom" id="Xbj-gG-cpa"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="CHk-UE-WQc" userLabel="Latest Status View">
+                    <view key="view" contentMode="scaleToFill" id="CHk-UE-WQc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -39,7 +40,7 @@
                                     <navigationItem title="Latest Status" id="zfC-pk-STe"/>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the button to fetch the latest status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YYr-M4-cDE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the button to fetch the latest status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YYr-M4-cDE" userLabel="Date Label">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -72,13 +73,13 @@
                                 <exclude reference="YYr-M4-cDE"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="0Xj-H2-dRg"/>
+                                <exclude reference="ago-dd-9Ft"/>
+                                <exclude reference="ggQ-1d-SKh"/>
                                 <exclude reference="LjJ-ca-XMD"/>
                                 <exclude reference="O1d-yt-eJb"/>
                                 <exclude reference="hEI-xx-tzS"/>
                                 <exclude reference="CNd-jy-xVA"/>
-                                <exclude reference="0Xj-H2-dRg"/>
-                                <exclude reference="ago-dd-9Ft"/>
-                                <exclude reference="ggQ-1d-SKh"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -87,13 +88,13 @@
                                 <include reference="YYr-M4-cDE"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="0Xj-H2-dRg"/>
+                                <include reference="ago-dd-9Ft"/>
+                                <include reference="ggQ-1d-SKh"/>
                                 <include reference="LjJ-ca-XMD"/>
                                 <include reference="O1d-yt-eJb"/>
                                 <include reference="hEI-xx-tzS"/>
                                 <include reference="CNd-jy-xVA"/>
-                                <include reference="0Xj-H2-dRg"/>
-                                <include reference="ago-dd-9Ft"/>
-                                <include reference="ggQ-1d-SKh"/>
                             </mask>
                         </variation>
                     </view>

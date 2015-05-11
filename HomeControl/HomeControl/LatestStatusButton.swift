@@ -1,5 +1,5 @@
 //
-//  LastValueButton.swift
+//  LatestStatusButton.swift
 //  HomeControl
 //
 //  Created by Jun Chen on 30/04/15.

@@ -1,5 +1,5 @@
 //
-//  LatestValueViewController.swift
+//  LatestStatusViewController.swift
 //  HomeControl
 //
 //  Created by Jun Chen on 01/05/15.
@@ -13,7 +13,9 @@ class LatestStatusViewController: UIViewController {
     @IBOutlet weak var latestStatusButton: LatestStatusButton!
     @IBOutlet weak var latestDateLabel: UILabel!
     
-    let networkClient = MockNetworkClient()
+    let networkClient = DefaultNetworkClient(host: "http://localhost:9000")
+    
+    var latestDate: NSDate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,8 @@ class LatestStatusViewController: UIViewController {
             forAttributeName: JLToastViewPortraitOffsetYAttributeName,
             userInterfaceIdiom: .Phone
         )
+        
+        FetchLatestMeasureAndShowAsTitle();
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,30 +48,41 @@ class LatestStatusViewController: UIViewController {
     */
     
     @IBAction func FetchLatestMeasureAndShowAsTitle() {
+        
+        func displayNetworkError(errorMessage: String) {
+            JLToast.makeText(errorMessage, duration: JLToastDelay.ShortDelay).show()
+        }
+        
+        func displayDataFormatError(errorMessage: String) {
+            JLToast.makeText(errorMessage, duration: JLToastDelay.ShortDelay).show()
+        }
+        
+        func displayNoNewStatus(message: String) {
+            JLToast.makeText(message, duration: JLToastDelay.ShortDelay).show()
+        }
+        
         func displayNewValueAsTitle(data: NSData) -> Void {
             let result: AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: nil)!
-            let measures = Measure.convertJsonToMeasure(result, dateFormat: MockNetworkClient.DATE_FORMAT)
+            let measures = Measure.convertJsonToMeasure(result, dateFormat: DefaultNetworkClient.DATE_FORMAT)
+            
             if measures.count != 1 {
                 displayDataFormatError("Can't diplay the fetched data, sorry.")
-            } else {
+            }
+            else if let fetchedDate = measures.first!.date, savedDate = latestDate where measures.first!.date!.isEqualToDate(latestDate!) {
+                displayNoNewStatus("No new update");
+            }
+            else {
                 dispatch_async(dispatch_get_main_queue(), {
+                    self.latestDate = measures.first!.date
+                    
                     self.latestStatusButton.setTitle(String(format:"%.2f", measures.first!.value), forState: UIControlState.Normal)
                     self.latestDateLabel.text = measures.first!.getDateString()
                     // TODO: If same date, diplay no new value
                 })
-                
             }
         }
         
         networkClient.httpGet(fromPath: "/last", completionAction: displayNewValueAsTitle, errorAction: displayNetworkError)
-    }
-
-    func displayNetworkError(errorMessage: String) {
-        JLToast.makeText(errorMessage, duration: JLToastDelay.ShortDelay).show()
-    }
-    
-    func displayDataFormatError(errorMessage: String) {
-        JLToast.makeText(errorMessage, duration: JLToastDelay.ShortDelay).show()
     }
     
 }

@@ -14,9 +14,9 @@
 		852F9DF61A9A2D4F0033AA11 /* HomeControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852F9DF51A9A2D4F0033AA11 /* HomeControlTests.swift */; };
 		856DD8281AF3B04700604CD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 856DD8271AF3B04700604CD2 /* Main.storyboard */; };
 		856EAC281AF283A100E9ABCD /* LatestStatusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856EAC271AF283A100E9ABCD /* LatestStatusButton.swift */; };
+		85C369001B014DA3004C0578 /* DefaultNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C368FF1B014DA3004C0578 /* DefaultNetworkClient.swift */; };
 		85E0B8211AF3BEAC00BECE2D /* LatestStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E0B8201AF3BEAC00BECE2D /* LatestStatusViewController.swift */; };
 		85F0501C1AF2DEE700BB595E /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0501B1AF2DEE700BB595E /* NetworkClient.swift */; };
-		85F0501E1AF2E1EF00BB595E /* MockNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0501D1AF2E1EF00BB595E /* MockNetworkClient.swift */; };
 		85F050211AF2E85E00BB595E /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F050201AF2E85E00BB595E /* NetworkUtils.swift */; };
 		85F050231AF2F14F00BB595E /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F050221AF2F14F00BB595E /* Measure.swift */; };
 		85F050311AF30AD100BB595E /* JLToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F0502E1AF30AD100BB595E /* JLToast.swift */; };
@@ -46,9 +46,9 @@
 		852F9DF51A9A2D4F0033AA11 /* HomeControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeControlTests.swift; sourceTree = "<group>"; };
 		856DD8271AF3B04700604CD2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		856EAC271AF283A100E9ABCD /* LatestStatusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestStatusButton.swift; sourceTree = "<group>"; };
+		85C368FF1B014DA3004C0578 /* DefaultNetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNetworkClient.swift; sourceTree = "<group>"; };
 		85E0B8201AF3BEAC00BECE2D /* LatestStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestStatusViewController.swift; sourceTree = "<group>"; };
 		85F0501B1AF2DEE700BB595E /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
-		85F0501D1AF2E1EF00BB595E /* MockNetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockNetworkClient.swift; sourceTree = "<group>"; };
 		85F050201AF2E85E00BB595E /* NetworkUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
 		85F050221AF2F14F00BB595E /* Measure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
 		85F0502D1AF30AD100BB595E /* JLToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLToast.h; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 			children = (
 				85F050201AF2E85E00BB595E /* NetworkUtils.swift */,
 				85F0501B1AF2DEE700BB595E /* NetworkClient.swift */,
-				85F0501D1AF2E1EF00BB595E /* MockNetworkClient.swift */,
+				85C368FF1B014DA3004C0578 /* DefaultNetworkClient.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -293,13 +293,13 @@
 				85E0B8211AF3BEAC00BECE2D /* LatestStatusViewController.swift in Sources */,
 				851A08311AF5239E0081DC0E /* AdjustButton.swift in Sources */,
 				85F050311AF30AD100BB595E /* JLToast.swift in Sources */,
-				85F0501E1AF2E1EF00BB595E /* MockNetworkClient.swift in Sources */,
 				85F050331AF30AD100BB595E /* JLToastView.swift in Sources */,
 				852F9DE01A9A2D4F0033AA11 /* AppDelegate.swift in Sources */,
 				856EAC281AF283A100E9ABCD /* LatestStatusButton.swift in Sources */,
 				85F050211AF2E85E00BB595E /* NetworkUtils.swift in Sources */,
 				85F0501C1AF2DEE700BB595E /* NetworkClient.swift in Sources */,
 				85F050321AF30AD100BB595E /* JLToastCenter.swift in Sources */,
+				85C369001B014DA3004C0578 /* DefaultNetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

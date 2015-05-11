@@ -1,5 +1,5 @@
 //
-//  IncreaseButton.swift
+//  AdjustButton.swift
 //  HomeControl
 //
 //  Created by Jun Chen on 02/05/15.

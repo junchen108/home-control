@@ -13,7 +13,8 @@ class LatestStatusViewController: UIViewController {
     @IBOutlet weak var latestStatusButton: LatestStatusButton!
     @IBOutlet weak var latestDateLabel: UILabel!
     
-    let networkClient = DefaultNetworkClient(host: "http://localhost:9000")
+    //let networkClient = DefaultNetworkClient(host: "http://localhost:9000", dateFormat: "yyyy-MM-dd HH:mm:ss")
+    let networkClient = DefaultNetworkClient(host: "http://192.168.43.116:3000", dateFormat: "E, dd MMM yyyy HH:mm:ss z")
     
     var latestDate: NSDate? = nil
     
@@ -63,7 +64,8 @@ class LatestStatusViewController: UIViewController {
         
         func displayNewValueAsTitle(data: NSData) -> Void {
             let result: AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: nil)!
-            let measures = Measure.convertJsonToMeasure(result, dateFormat: DefaultNetworkClient.DATE_FORMAT)
+            // let measures = Measure.convertJsonToMeasure(result, dateFormat: networkClient.dataFormat)
+            let measures = Measure.convertLatestJsonFromTrueServerToMeasure(result, dateFormat: networkClient.dataFormat)
             
             if measures.count != 1 {
                 displayDataFormatError("Can't diplay the fetched data, sorry.")
@@ -77,7 +79,6 @@ class LatestStatusViewController: UIViewController {
                     
                     self.latestStatusButton.setTitle(String(format:"%.2f", measures.first!.value), forState: UIControlState.Normal)
                     self.latestDateLabel.text = measures.first!.getDateString()
-                    // TODO: If same date, diplay no new value
                 })
             }
         }

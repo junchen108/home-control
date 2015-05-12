@@ -10,13 +10,13 @@ import Foundation
 
 class DefaultNetworkClient: NetworkClient {
     
-    static let DATE_FORMAT = "yyyy-MM-dd HH:mm:ss"
-    
     let ERROR_MESSAGE = "Can't fetch data right now, sorry."
     let host: String
+    let dataFormat: String
     
-    init(host: String) {
+    init(host: String, dateFormat: String) {
         self.host = host;
+        self.dataFormat = dateFormat;
     }
     
     func httpGet(fromPath path: String, completionAction completionHandler: NSData -> Void, errorAction errorHandler: String -> Void) {

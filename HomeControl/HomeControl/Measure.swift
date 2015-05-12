@@ -53,4 +53,22 @@ class Measure {
         return measures
     }
     
+    static func convertLatestJsonFromTrueServerToMeasure(json: AnyObject, dateFormat: String) -> [Measure] {
+        var measures: [Measure] = []
+        
+        func processJson(measureJson: [String: AnyObject]) {
+            if let data = measureJson["data"] as? [AnyObject] where data.count == 2 {
+                let value = data.first! as! Double
+                let date = data.last as! String
+                measures.append(Measure(value: value, dateString: date, dateFormat: dateFormat))
+            }
+        }
+        
+        if let measureJson = json as? [String: AnyObject] {
+            processJson(measureJson)
+        }
+        
+        return measures
+    }
+    
 }

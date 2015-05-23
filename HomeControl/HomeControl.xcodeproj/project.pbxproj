@@ -12,6 +12,7 @@
 		852F9DE71A9A2D4F0033AA11 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 852F9DE61A9A2D4F0033AA11 /* Images.xcassets */; };
 		852F9DEA1A9A2D4F0033AA11 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 852F9DE81A9A2D4F0033AA11 /* LaunchScreen.xib */; };
 		852F9DF61A9A2D4F0033AA11 /* HomeControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852F9DF51A9A2D4F0033AA11 /* HomeControlTests.swift */; };
+		8568A3BA1B0E33300015DA59 /* Just.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8568A3B91B0E33300015DA59 /* Just.swift */; };
 		856DD8281AF3B04700604CD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 856DD8271AF3B04700604CD2 /* Main.storyboard */; };
 		856EAC281AF283A100E9ABCD /* LatestStatusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856EAC271AF283A100E9ABCD /* LatestStatusButton.swift */; };
 		85C369001B014DA3004C0578 /* DefaultNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C368FF1B014DA3004C0578 /* DefaultNetworkClient.swift */; };
@@ -44,6 +45,7 @@
 		852F9DEF1A9A2D4F0033AA11 /* HomeControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		852F9DF41A9A2D4F0033AA11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		852F9DF51A9A2D4F0033AA11 /* HomeControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeControlTests.swift; sourceTree = "<group>"; };
+		8568A3B91B0E33300015DA59 /* Just.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Just.swift; sourceTree = "<group>"; };
 		856DD8271AF3B04700604CD2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		856EAC271AF283A100E9ABCD /* LatestStatusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestStatusButton.swift; sourceTree = "<group>"; };
 		85C368FF1B014DA3004C0578 /* DefaultNetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNetworkClient.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		8537B2391A9A887500020DB6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				8568A3B91B0E33300015DA59 /* Just.swift */,
 				85F050201AF2E85E00BB595E /* NetworkUtils.swift */,
 				85F0501B1AF2DEE700BB595E /* NetworkClient.swift */,
 				85C368FF1B014DA3004C0578 /* DefaultNetworkClient.swift */,
@@ -292,6 +295,7 @@
 				85F050231AF2F14F00BB595E /* Measure.swift in Sources */,
 				85E0B8211AF3BEAC00BECE2D /* LatestStatusViewController.swift in Sources */,
 				851A08311AF5239E0081DC0E /* AdjustButton.swift in Sources */,
+				8568A3BA1B0E33300015DA59 /* Just.swift in Sources */,
 				85F050311AF30AD100BB595E /* JLToast.swift in Sources */,
 				85F050331AF30AD100BB595E /* JLToastView.swift in Sources */,
 				852F9DE01A9A2D4F0033AA11 /* AppDelegate.swift in Sources */,

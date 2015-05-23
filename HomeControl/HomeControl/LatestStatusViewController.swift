@@ -13,6 +13,11 @@ class LatestStatusViewController: UIViewController {
     @IBOutlet weak var latestStatusButton: LatestStatusButton!
     @IBOutlet weak var latestDateLabel: UILabel!
     
+    @IBOutlet weak var setMaxTo27Button: UIButton!
+    @IBOutlet weak var setMaxTo25Button: UIButton!
+    @IBOutlet weak var setMinTo18Button: UIButton!
+    @IBOutlet weak var setMinTo22Button: UIButton!
+    
     //let networkClient = DefaultNetworkClient(host: "http://localhost:9000", dateFormat: "yyyy-MM-dd HH:mm:ss")
     let networkClient = DefaultNetworkClient(host: "http://192.168.43.116:3000", dateFormat: "E, dd MMM yyyy HH:mm:ss z")
     
@@ -84,6 +89,30 @@ class LatestStatusViewController: UIViewController {
         }
         
         networkClient.httpGet(fromPath: "/last", completionAction: displayNewValueAsTitle, errorAction: displayNetworkError)
+    }
+    
+    @IBAction func setMaxTo27() {
+        Just.get("http://192.168.43.116:3000/setMax/27") { (r) in
+            // the same "r" is available asynchronously here
+        }
+    }
+    
+    @IBAction func setMaxTo25() {
+        Just.get("http://192.168.43.116:3000/setMax/30") { (r) in
+            // the same "r" is available asynchronously here
+        }
+    }
+    
+    @IBAction func setMinTo18() {
+        Just.get("http://192.168.43.116:3000/setMin/18") { (r) in
+            // the same "r" is available asynchronously here
+        }
+    }
+    
+    @IBAction func setMinTo22() {
+        Just.get("http://192.168.43.116:3000/setMin/22") { (r) in
+            // the same "r" is available asynchronously here
+        }
     }
     
 }
